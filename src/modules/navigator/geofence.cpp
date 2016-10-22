@@ -47,7 +47,7 @@
 #include <systemlib/mavlink_log.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
+#include <cctype>
 #include <px4_config.h>
 #include <px4_defines.h>
 #include <unistd.h>
@@ -339,7 +339,7 @@ Geofence::loadFromFile(const char *filename)
 		/* Trim leading whitespace */
 		size_t textStart = 0;
 
-		while ((textStart < sizeof(line) / sizeof(char)) && isspace(line[textStart])) { textStart++; }
+		while ((textStart < sizeof(line) / sizeof(char)) && std::isspace(line[textStart])) { textStart++; }
 
 		/* if the line starts with #, skip */
 		if (line[textStart] == commentChar) {

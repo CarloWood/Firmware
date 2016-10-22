@@ -103,7 +103,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
-#include <ctype.h>
+#include <cctype>
 #include <poll.h>
 
 #include <px4_workqueue.h>
@@ -906,7 +906,7 @@ int
 BlinkM::play_script(const char *script_name)
 {
 	/* handle HTML colour encoding */
-	if (isxdigit(script_name[0]) && (strlen(script_name) == 6)) {
+	if (std::isxdigit(script_name[0]) && (strlen(script_name) == 6)) {
 		char code[3];
 		uint8_t r, g, b;
 

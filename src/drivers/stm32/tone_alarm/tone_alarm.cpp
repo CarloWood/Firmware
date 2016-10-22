@@ -102,7 +102,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <math.h>
-#include <ctype.h>
+#include <cctype>
 
 #include <board_config.h>
 #include <drivers/drv_hrt.h>
@@ -827,11 +827,11 @@ tune_end:
 int
 ToneAlarm::next_char()
 {
-	while (isspace(*_next)) {
+	while (std::isspace(*_next)) {
 		_next++;
 	}
 
-	return toupper(*_next);
+	return std::toupper(*_next);
 }
 
 unsigned
@@ -843,7 +843,7 @@ ToneAlarm::next_number()
 	for (;;) {
 		c = next_char();
 
-		if (!isdigit(c)) {
+		if (!std::isdigit(c)) {
 			return number;
 		}
 
