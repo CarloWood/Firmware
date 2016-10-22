@@ -186,9 +186,7 @@ __END_DECLS
 
 #if defined(__PX4_QURT)
 #include "dspal_math.h"
-__BEGIN_DECLS
 #include <math.h>
-__END_DECLS
 #else
 #include <math.h>
 #endif
